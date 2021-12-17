@@ -61,6 +61,6 @@ export class ChildComponent extends FASTElement {
     this.style.top = event.offsetY + 'px';
     this.style.bottom = `auto`;
     this.style.right = `auto`;
-    this.status = 'open';
+    this.$emit('change', `open`);
   }
 }
