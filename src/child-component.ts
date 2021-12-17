@@ -1,18 +1,19 @@
 
 
-import {
-  FASTElement, customElement, html, css,
-  attr, slotted, observable
-} from '@microsoft/fast-element';
+import {FASTElement, customElement, html, css, attr } from '@microsoft/fast-element';
 import { fromEvent, Subscription } from 'rxjs';
 
 const template = html<ChildComponent>`
   <div>
-  <slot ${slotted('slottedNodes')} @slotchange="${x => x.onSlotChanged()}"></slot>
+  <slot @slotchange="${x => x.onSlotChanged()}"></slot>
   </div>
 
  `;
 
+ /**
+  * The menu will be opened only if the status is set to "open".
+  * By default, the menu will be hidden.
+  */
 const styles = css`
   :host {
     position: absolute;
@@ -30,9 +31,6 @@ const styles = css`
   styles
 })
 export class ChildComponent extends FASTElement {
-  @observable
-  slottedNodes: Node[];
-
   @attr
   status: string = '';
 
@@ -54,6 +52,10 @@ export class ChildComponent extends FASTElement {
     }
   }
 
+  /**
+   * Display the menu by setting the status attribute to "open"
+   * @param event 
+   */
   public open(event: MouseEvent | PointerEvent) {
     this.style.left = event.offsetX + 'px';
     this.style.top = event.offsetY + 'px';

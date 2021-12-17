@@ -22,15 +22,14 @@ const styles = css`
 @customElement({
   name: 'parent-component',
   template,
-  styles,
-  shadowOptions: null
+  styles
 })
 export class ParentComponent extends FASTElement {
 
   @observable
-  parentStatus: string = 'none';
+  parentStatus: string = 'test'; // Default attribute value
 
   public closeMenu() {
-    this.parentStatus = 'none';
+    this.parentStatus = 'none'; // The status will be passed to the child element (i.e. a menu), forcing the menu to be closed.
   }
 }
