@@ -7,7 +7,7 @@ const template = html<ParentComponent>`
       <fast-menu-item @click="${(x) => x.closeMenu()}">Close Menu</fast-menu-item>
       </fast-menu>
     </child-component>
-    <div>Status = ${(x) => x.parentStatus}</div>
+    <div>Please right click the text to show popup menu. Status = ${(x) => x.parentStatus}</div>
   </div>
  `;
 
