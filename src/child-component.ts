@@ -43,7 +43,6 @@ export class ChildComponent extends FASTElement {
     this.contextMenuSubscription = fromEvent<MouseEvent>(parentElement, 'contextmenu')
       .subscribe(event => {
         event.preventDefault();
-        event.stopPropagation();
         this.open(event);
       });
   }

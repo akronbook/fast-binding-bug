@@ -2,10 +2,9 @@ import { FASTElement, customElement, html, css, attr, observable } from '@micros
 
 const template = html<ParentComponent>`
   <div>
-    <fast-button @click="${(x) => x.updateStatus1()}">Status 1</fast-button>
      <child-component :status=${(x) => x.parentStatus}>
       <fast-menu>
-      <fast-menu-item @click="${(x, c) => x.closeMenu()}">Close Menu</fast-menu-item>
+      <fast-menu-item @click="${(x) => x.closeMenu()}">Close Menu</fast-menu-item>
       </fast-menu>
     </child-component>
     <div>Status = ${(x) => x.parentStatus}</div>
@@ -29,11 +28,7 @@ const styles = css`
 export class ParentComponent extends FASTElement {
 
   @observable
-  parentStatus: string = 'Status 1';
-
-  public updateStatus1() {
-    this.parentStatus = 'Status 1';
-  }
+  parentStatus: string = 'none';
 
   public closeMenu() {
     this.parentStatus = 'none';
