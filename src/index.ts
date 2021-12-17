@@ -1,12 +1,8 @@
+export { DemoApp } from './demo-app';
+
 import {
-    provideFASTDesignSystem,
-    fastHorizontalScroll,
-    fastButton,
-    fastFlipper
+    provideFASTDesignSystem
 } from '@microsoft/fast-components';
 provideFASTDesignSystem()
     .register(
-        fastHorizontalScroll(),
-        fastButton(),
-        fastFlipper()
     );
