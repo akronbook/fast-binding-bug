@@ -18,4 +18,4 @@ When updating an element's attribute, the attribute didn't always take effect
 - Now try right-clicking on the text again, and clicking the menu. This time, the menu will NOT close.
 
 ## What does it mean?
-When clicking the menu, we are setting a child element's attribute value to "none". But the attribute was NOT set to "none", thus the menu stays open. This seems to be a bug to me.
+When clicking the menu, we intent to set a child element's attribute value to "none". But the attribute was NOT always updated to "none", thus the menu stays open. This seems to be a bug to me.
