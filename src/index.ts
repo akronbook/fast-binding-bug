@@ -1,5 +1,5 @@
-export { DemoApp } from './demo-app';
-
+export { ChildComponent } from './child-component';
+export { ParentComponent } from './parent-component';
 import {
     provideFASTDesignSystem
 } from '@microsoft/fast-components';
