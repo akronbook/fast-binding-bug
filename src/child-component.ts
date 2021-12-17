@@ -19,5 +19,5 @@ const template = html<ChildComponent>`
   export class ChildComponent extends FASTElement {
 
     @attr
-    status: string = '';
+    status: string = 'Status 1';
   }

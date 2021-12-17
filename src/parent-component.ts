@@ -19,7 +19,7 @@ const styles = css`
 export class ParentComponent extends FASTElement {
 
   @observable
-  parentStatus: string = 'Parent Status';
+  parentStatus: string = 'Status 1';
 
   public updateStatus1() {
     this.parentStatus = 'Status 1';
