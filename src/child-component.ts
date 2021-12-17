@@ -4,7 +4,7 @@ import { FASTElement, customElement, html, css, attr } from '@microsoft/fast-ele
 
 const template = html<ChildComponent>`
    <div>
-        Hello from child!
+        Status = ${(x)=>x.status}
    </div>
  `;
 

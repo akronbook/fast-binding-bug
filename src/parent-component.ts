@@ -1,21 +1,31 @@
-import { FASTElement, customElement, html, css, attr } from '@microsoft/fast-element';
+import { FASTElement, customElement, html, css, attr, observable } from '@microsoft/fast-element';
 
 const template = html<ParentComponent>`
-   <div>
-        <child-component></child-component>
-   </div>
+  <div>
+    <fast-button @click="${(x)=>x.updateStatus1()}">Status 1</fast-button>
+    <fast-button @click="${(x)=>x.updateStatus2()}">Status 2</fast-button>
+    <child-component :status=${(x) => x.parentStatus}></child-component>
+  </div>
  `;
 
- const styles = css`
+const styles = css`
  `;
 
 @customElement({
-    name: 'parent-component',
-    template,
-    styles
-  })
-  export class ParentComponent extends FASTElement {
+  name: 'parent-component',
+  template,
+  styles
+})
+export class ParentComponent extends FASTElement {
 
-    @attr
-    status: string = '';
+  @observable
+  parentStatus: string = 'Parent Status';
+
+  public updateStatus1() {
+    this.parentStatus = 'Status 1';
   }
+
+  public updateStatus2() {
+    this.parentStatus = 'Status 2';   
+  }
+}
